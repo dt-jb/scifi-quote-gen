@@ -93,17 +93,6 @@ let quotes = [
   }
 ];
 
-let colors = [
-  "blue",
-  "yellow",
-  "purple",
-  "red",
-  "orange",
-  "black",
-  "cyan",
-  "pink"
-];
-
 
 //Selects a quote from the quotes array at random
 function getRandomQuote() {
