@@ -31,14 +31,14 @@ let quotes = [
     source: 'Ray Bradbury',
     citation: '<i>The Martian Chronicles</i>',
     year: 1950,
-    //nationality: 'American',
+    nationality: 'American',
     occupation: 'author and screenwriter'
   },
 
   {
     quote: 'We are an impossibility in an impossible universe.',
     source: 'Ray Bradbury',
-    //nationality: 'American',
+    nationality: 'American',
     occupation: 'author and screenwriter'
   },
 
@@ -92,7 +92,17 @@ let quotes = [
     occupation: 'science-fiction writer and aeronautical engineer'
   }
 ];
-console.log(quotes);
+
+let colors = [
+  "blue",
+  "yellow",
+  "purple",
+  "red",
+  "orange",
+  "black",
+  "cyan",
+  "pink"
+];
 
 
 //Selects a quote from the quotes array at random
@@ -100,8 +110,10 @@ function getRandomQuote() {
   return quotes[Math.floor(Math.random() * quotes.length)];
 }
 
-
-//printQuote() takes random quote object and structures the html by retrieving object properties and placing with html tags
+/*printQuote() takes random quote object and structures the html by retrieving
+object properties and placing with html tags.  Includes additional conditional
+statements for additional object tags (beyond required)
+*/
 function printQuote() {
   let randomQuote = getRandomQuote();
   let newQuote = '';
@@ -123,25 +135,7 @@ function printQuote() {
   }
   document.getElementById("quote-box").innerHTML = newQuote;
 }
-/*
-function printQuote() {
-  let randomQuote = getRandomQuote();
-  let newQuote = '';
 
-  newQuote += "<p class=\"quote\">" + randomQuote.quote + "</p>";
-  newQuote += "<p class=\"source\">" + randomQuote.source + ", ";
-  newQuote += randomQuote.nationality;
-  newQuote += " " + randomQuote.occupation + "</span>";
-
-  if (randomQuote.hasOwnProperty('citation')) {
-    newQuote += "<span class=\"citation\">" + randomQuote.citation + "</span>";
-    newQuote += "<span class=\"year\">" + randomQuote.year + "</span></p>";
-  } else {
-    document.getElementById("quote-box").innerHTML = newQuote;
-  }
-  document.getElementById("quote-box").innerHTML = newQuote;
-}
-*/
 printQuote();
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
